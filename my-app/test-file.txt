@@ -1,0 +1,11 @@
+Ceci est un document de test pour DataAnalyzer.
+
+L'intelligence artificielle est en train de transformer le monde. Elle est utilisée dans de nombreux domaines :
+
+1. La santé - pour diagnostiquer les maladies
+2. L'éducation - pour personnaliser l'apprentissage
+3. L'environnement - pour prédire les catastrophes naturelles
+4. Les transports - pour améliorer la sécurité routière
+5. Le commerce - pour optimiser les chaînes logistiques
+
+DataAnalyzer utilise la puissance de l'IA pour analyser vos documents et générer des rapports detaillés.

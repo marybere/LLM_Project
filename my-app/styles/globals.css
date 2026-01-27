@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --border: 240 3.7% 15.3%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-dark: 217.2 100% 40%;
+    --secondary: 240 3.7% 15.3%;
+    --secondary-light: 240 3.7% 25.3%;
+    --destructive: 0 84.2% 60.2%;
+    --accent: 280 85% 67%;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(180deg, #0f172a 0%, #1a1f3a 50%, #0f172a 100%);
+    position: relative;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgb(59, 130, 246), rgb(34, 211, 238));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, rgb(59, 130, 246), rgb(34, 211, 238));
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    @apply border border-blue-500/20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-bold hover:from-blue-500 hover:to-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 active:scale-95 transform;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-slate-700/50 text-slate-100 rounded-lg font-medium hover:bg-slate-600/50 transition-all duration-300 border border-slate-600/50;
+  }
+
+  /* Smooth animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Responsive padding */
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Button groups */
+  .btn-group {
+    @apply flex gap-3 flex-wrap md:flex-nowrap;
+  }
+
+  /* Status indicators */
+  .status-pulse {
+    @apply w-2 h-2 rounded-full bg-green-400 animate-pulse;
+  }
+
+  .status-success {
+    @apply text-green-400 font-semibold;
+  }
+
+  .status-error {
+    @apply text-red-400 font-semibold;
+  }
+
+  .status-warning {
+    @apply text-yellow-400 font-semibold;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
